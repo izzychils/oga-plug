@@ -1,0 +1,256 @@
+.cta {
+  background: linear-gradient(180deg, var(--background-page) 0%, rgba(37, 211, 102, 0.06) 100%);
+}
+
+.cta-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.cta-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.cta-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(7, 94, 84, 0.08);
+  border: 1px solid rgba(7, 94, 84, 0.2);
+  border-radius: 50px;
+  color: var(--accent-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.cta-text h2 {
+  margin-bottom: 1rem;
+}
+
+.cta-text p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.cta-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin-bottom: 2rem;
+}
+
+.cta-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.cta-feature svg {
+  color: var(--primary-color);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Phone Visual — WhatsApp Dark Chat */
+.cta-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.cta-phone {
+  background: #202c33;
+  border-radius: 24px;
+  padding: 0.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+}
+
+.phone-notch {
+  width: 100px;
+  height: 18px;
+  background: #111b21;
+  border-radius: 0 0 16px 16px;
+  margin: 0 auto 0.5rem;
+}
+
+.cta .phone-screen {
+  background: var(--chat-bg);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.phone-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--chat-header-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.phone-avatar {
+  width: 36px;
+  height: 36px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.phone-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-name {
+  font-weight: 600;
+  color: #e9edef;
+  font-size: 0.9375rem;
+}
+
+.phone-status {
+  font-size: 0.75rem;
+  color: var(--primary-color);
+}
+
+.phone-messages {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 180px;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.phone-messages .message {
+  max-width: 80%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+}
+
+.phone-messages .message.user {
+  background: var(--chat-bubble-outgoing);
+  color: #e9edef;
+  align-self: flex-end;
+  border-top-right-radius: 0;
+}
+
+.phone-messages .message.bot {
+  background: var(--chat-bubble-incoming);
+  color: #e9edef;
+  align-self: flex-start;
+  border-top-left-radius: 0;
+}
+
+.phone-input {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: var(--chat-header-bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.phone-input input {
+  flex: 1;
+  padding: 0.625rem 1rem;
+  background: var(--chat-input-bg);
+  border: none;
+  border-radius: 20px;
+  color: #e9edef;
+  font-size: 0.8125rem;
+}
+
+.phone-input input::placeholder {
+  color: rgba(233, 237, 239, 0.4);
+}
+
+.send-btn {
+  width: 36px;
+  height: 36px;
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.send-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cta-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .cta-features {
+    align-items: center;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-content {
+    gap: 2rem;
+    padding: 0;
+  }
+
+  .cta-container {
+    padding: 0 1rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-buttons .btn-primary,
+  .cta-buttons .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .cta-phone {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-phone {
+    max-width: 260px;
+  }
+  
+  .phone-messages {
+    min-height: 160px;
+  }
+}
