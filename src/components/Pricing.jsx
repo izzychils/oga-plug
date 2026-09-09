@@ -7,52 +7,73 @@ const plans = [
     name: 'FREE',
     price: '₦0',
     period: 'forever',
-    description: 'Perfect for small businesses getting started',
+    description: 'Try before you commit - 30-day trial with limits',
     features: [
-      { text: 'Up to 100 products', included: true },
-      { text: 'Basic POS features', included: true },
-      { text: 'Daily sales reports', included: true },
-      { text: 'WhatsApp integration', included: true },
-      { text: 'USSD access', included: true },
-      { text: 'Advanced analytics', included: false },
-      { text: 'Multi-location', included: false },
-      { text: 'Priority support', included: false }
+      { text: '50 product limit', included: true },
+      { text: '100 transactions/month', included: true },
+      { text: 'Basic debt tracking', included: true },
+      { text: 'WhatsApp capture', included: true },
+      { text: 'No reports', included: false },
+      { text: 'No staff accounts', included: false },
+      { text: 'No daily summaries', included: false },
+      { text: 'No expiry tracking', included: false }
     ],
-    popular: false
+    popular: false,
+    target: 'Trial users'
   },
   {
-    name: 'PRO',
-    price: '₦5,000',
+    name: 'TRADER',
+    price: '₦3,500',
     period: '/month',
-    description: 'For growing businesses that need more power',
+    description: 'For single-location shops and market traders',
     features: [
       { text: 'Unlimited products', included: true },
-      { text: 'Advanced POS features', included: true },
-      { text: 'Real-time analytics', included: true },
-      { text: 'WhatsApp integration', included: true },
-      { text: 'USSD access', included: true },
-      { text: 'Advanced analytics', included: true },
-      { text: 'Multi-location (up to 5)', included: true },
-      { text: 'Priority support', included: false }
+      { text: 'Unlimited transactions', included: true },
+      { text: 'Full debt ledger + auto-reminders', included: true },
+      { text: 'WhatsApp + Web dashboard', included: true },
+      { text: 'Daily sales summary', included: true },
+      { text: '1 staff account', included: true },
+      { text: 'Monthly report', included: true },
+      { text: 'Expiry tracking', included: false }
     ],
-    popular: true
+    popular: true,
+    target: 'General trade owners'
   },
   {
-    name: 'ENTERPRISE',
+    name: 'BUSINESS',
+    price: '₦8,500',
+    period: '/month',
+    description: 'For growing businesses with staff and multiple locations',
+    features: [
+      { text: 'Everything in TRADER', included: true },
+      { text: '5 staff accounts', included: true },
+      { text: 'Multi-location view', included: true },
+      { text: 'Cash flow summary', included: true },
+      { text: 'Export to Excel & PDF', included: true },
+      { text: 'Supplier directory', included: true },
+      { text: 'Priority support', included: true },
+      { text: 'Expiry tracking', included: false }
+    ],
+    popular: false,
+    target: 'Multi-location businesses'
+  },
+  {
+    name: 'PHARMACY',
     price: '₦15,000',
     period: '/month',
-    description: 'For large businesses and franchises',
+    description: 'Specialized plan for registered pharmacies',
     features: [
-      { text: 'Unlimited products', included: true },
-      { text: 'Custom POS setup', included: true },
-      { text: 'AI-powered insights', included: true },
-      { text: 'WhatsApp integration', included: true },
-      { text: 'USSD access', included: true },
-      { text: 'Advanced analytics', included: true },
-      { text: 'Unlimited locations', included: true },
-      { text: '24/7 priority support', included: true }
+      { text: 'Everything in BUSINESS', included: true },
+      { text: 'Batch & expiry tracking', included: true },
+      { text: 'NAFDAC compliance fields', included: true },
+      { text: 'PCN compliance log', included: true },
+      { text: 'Near-expiry WhatsApp alerts', included: true },
+      { text: 'Shift-based sales tracking', included: true },
+      { text: 'Supplier invoice OCR (200+ items)', included: true },
+      { text: 'Dedicated pharmacy support', included: true }
     ],
-    popular: false
+    popular: false,
+    target: 'Registered pharmacies'
   }
 ];
 
@@ -82,8 +103,8 @@ function Pricing() {
       <div className="pricing-container">
         <div className="section-header">
           <span className="section-badge">Pricing</span>
-          <h2>Simple, Transparent Pricing</h2>
-          <p>Start free, upgrade when you're ready. No hidden fees, no surprises.</p>
+          <h2>Honest, Transparent Pricing</h2>
+          <p>Start with a free trial. Upgrade when you see the value. One recovered debt pays for itself.</p>
         </div>
         
         <div className="pricing-grid">
@@ -100,6 +121,7 @@ function Pricing() {
                   <span className="period">{plan.period}</span>
                 </div>
                 <p className="plan-description">{plan.description}</p>
+                <p className="plan-target">{plan.target}</p>
               </div>
               
               <ul className="plan-features">

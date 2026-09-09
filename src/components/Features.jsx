@@ -1,51 +1,49 @@
 import { useEffect, useRef } from 'react';
 import { 
-  MessageCircle, 
-  BarChart3, 
-  DollarSign, 
+  Camera, 
   Package, 
-  MapPin, 
-  Phone,
-  ArrowRight
+  Users,
+  ArrowRight,
+  Check
 } from 'lucide-react';
 import './Features.css';
 
 const features = [
   {
-    icon: MessageCircle,
-    title: 'WhatsApp Integration',
-    description: 'Run your business through simple WhatsApp commands. No app download needed.',
+    icon: Camera,
+    title: 'Smart Capture Engine',
+    description: 'Send a voice note, photo of receipt, or text message. Oga Plug reads it, extracts data, asks you to confirm, then logs everything. Works with handwritten receipts, waybills, and bank transfer screenshots.',
+    capabilities: [
+      'Voice notes in Pidgin or English',
+      'Receipt photo scanning (OCR)',
+      'Bank transfer alert reading',
+      'Confirmation before every entry'
+    ],
     color: '#25D366'
   },
   {
-    icon: BarChart3,
-    title: 'Sales Tracking',
-    description: 'Record sales instantly and get real-time reports on your business performance.',
+    icon: Package,
+    title: 'Inventory & Stock Management',
+    description: 'Web dashboard shows current stock, low-stock alerts, and movement history. WhatsApp sends daily low-stock summaries. Pharmacy users get expiry date tracking for every drug.',
+    capabilities: [
+      'Real-time stock levels',
+      'Low stock WhatsApp alerts',
+      'Stock movement history',
+      'Expiry tracking (pharmacy)'
+    ],
     color: '#FF6B35'
   },
   {
-    icon: DollarSign,
-    title: 'Debt Management',
-    description: 'Track customer debts and receive automatic reminders for overdue payments.',
+    icon: Users,
+    title: 'Customer Debt Ledger',
+    description: 'Log credit sales by voice. Check any customer\'s balance instantly. Send automated WhatsApp debt reminders. See all overdue debts sorted by amount and days overdue. Never lose money to uncollected credit again.',
+    capabilities: [
+      'Log credit sales in seconds',
+      'Auto debt reminders via WhatsApp',
+      'See who owes you and how much',
+      'Payment tracking and reconciliation'
+    ],
     color: '#128C7E'
-  },
-  {
-    icon: Package,
-    title: 'Inventory Control',
-    description: 'Manage your stock levels and get alerts when items are running low.',
-    color: '#FFD700'
-  },
-  {
-    icon: MapPin,
-    title: 'Multi-location Support',
-    description: 'Manage multiple business locations from a single WhatsApp number.',
-    color: '#FF4444'
-  },
-  {
-    icon: Phone,
-    title: 'USSD for Feature Phones',
-    description: 'No smartphone? Dial *384# to access core features on any phone.',
-    color: '#9B59B6'
   }
 ];
 
@@ -74,9 +72,9 @@ function Features() {
     <section id="features" className="features" ref={sectionRef}>
       <div className="features-container">
         <div className="section-header">
-          <span className="section-badge">Features</span>
-          <h2>Everything You Need to Run Your Business</h2>
-          <p>Powerful tools designed for African businesses, accessible through the app you already use daily.</p>
+          <span className="section-badge">MVP Features</span>
+          <h2>Three Core Functions. Built Excellently.</h2>
+          <p>WhatsApp captures your data. Web dashboard manages your business. Both work together seamlessly.</p>
         </div>
         
         <div className="features-grid">
@@ -91,11 +89,25 @@ function Features() {
               </div>
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>
-              <a href="#cta" className="feature-link">
-                Learn more <ArrowRight size={16} />
+              
+              <ul className="feature-capabilities">
+                {feature.capabilities.map((capability, i) => (
+                  <li key={i}>
+                    <Check size={16} />
+                    <span>{capability}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <a href="#how-it-works" className="feature-link">
+                See it in action <ArrowRight size={16} />
               </a>
             </div>
           ))}
+        </div>
+        
+        <div className="features-note">
+          <p><strong>The Hybrid Architecture:</strong> WhatsApp handles everything conversational and fast (voice notes, quick checks, notifications). The web dashboard handles everything that requires proper navigation (full reports, inventory management, customer lists). You get the best interface for each task.</p>
         </div>
       </div>
     </section>

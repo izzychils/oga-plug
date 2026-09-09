@@ -55,6 +55,22 @@
   margin-bottom: 1.5rem;
 }
 
+.testimonial-content {
+  position: relative;
+}
+
+.pain-point-badge {
+  display: inline-block;
+  background: rgba(255, 107, 53, 0.1);
+  color: #FF6B35;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 107, 53, 0.2);
+}
+
 .testimonial-text {
   font-size: 1.125rem;
   color: var(--text-primary);

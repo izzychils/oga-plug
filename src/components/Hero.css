@@ -97,6 +97,10 @@
   background-clip: text;
 }
 
+.secondary-text {
+  color: var(--secondary-color);
+}
+
 .hero-description {
   font-size: 1.25rem;
   color: var(--text-secondary);

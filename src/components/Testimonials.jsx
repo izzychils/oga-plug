@@ -4,44 +4,49 @@ import './Testimonials.css';
 
 const testimonials = [
   {
-    name: 'Alhaji Musa',
+    name: 'Alhaji Musa Ibrahim',
     business: 'Musa General Merchants',
-    location: 'Lagos, Nigeria',
+    location: 'Mile 3 Market, Port Harcourt',
     rating: 5,
-    text: 'Oga Plug has transformed how I run my business. I can now track all my sales and debts right from WhatsApp. No more manual records!',
-    avatar: 'AM'
+    text: 'Before Oga Plug, I no know who dey owe me money well well. Now when customer say "Alhaji I go pay next week," I just send reminder through WhatsApp. I don collect ₦340,000 wey I for forget since I start to use am.',
+    avatar: 'AM',
+    painPoint: 'Uncollected debts'
   },
   {
-    name: 'Ngozi Okafor',
-    business: 'Ngozi Pharmacy',
-    location: 'Port Harcourt, Nigeria',
+    name: 'Mrs. Ngozi Okafor',
+    business: 'Ngozi Community Pharmacy',
+    location: 'GRA Phase 2, Port Harcourt',
     rating: 5,
-    text: 'As a pharmacist, I need to track inventory carefully. Oga Plug alerts me when stock is low and helps me manage my suppliers efficiently.',
-    avatar: 'NO'
+    text: 'The expiry tracking saved my business. Last month, Oga Plug alert me say 15 drugs dey expire in 30 days. I run clearance sale sharp sharp. ₦180,000 I would have thrown away, I still sell ₦120,000. That one pain pass.',
+    avatar: 'NO',
+    painPoint: 'Drug expiry losses'
   },
   {
-    name: 'Ibrahim Abdullahi',
-    business: 'Ibrahim Hardware Store',
-    location: 'Kano, Nigeria',
+    name: 'Emeka Okonkwo',
+    business: 'Emeka Provisions',
+    location: 'Rumuola Market, Port Harcourt',
     rating: 5,
-    text: 'The USSD feature is a game changer. My workers who don\'t have smartphones can still record sales. This is truly built for Africa.',
-    avatar: 'IA'
+    text: 'I just snap the waybill when Dangote delivery come. Oga Plug read all the 50 items, update my stock. Wetin go take me 2 hours with pen and paper, I don finish in 3 minutes. My wife sef shock when she see am.',
+    avatar: 'EO',
+    painPoint: 'Manual stock entry'
   },
   {
-    name: 'Funke Adeyemi',
-    business: 'Funke Fashion House',
-    location: 'Abuja, Nigeria',
+    name: 'Mama Chioma',
+    business: 'Chioma Food Supplies',
+    location: 'New Owerri Market',
     rating: 5,
-    text: 'I love how I can manage my 3 store locations from one WhatsApp number. The daily reports help me make better business decisions.',
-    avatar: 'FA'
+    text: 'I dey sell tomato and pepper. Every evening, Oga Plug send me message say "you sell ₦45,000 today, your profit na ₦12,500." For the first time in 8 years, I sabi how much I dey really make. Na so business suppose be.',
+    avatar: 'MC',
+    painPoint: 'Unknown profit margins'
   },
   {
-    name: 'Chukwuemeka Obi',
-    business: 'Emeka Bookshop',
-    location: 'Enugu, Nigeria',
+    name: 'Dr. Chukwudi Nwosu',
+    business: 'MedPlus Pharmacy',
+    location: 'Ikenegbu, Owerri',
     rating: 5,
-    text: 'Setting up was so easy! Just sent "Hi" and my business was live in 2 minutes. No email verification or complicated forms.',
-    avatar: 'CO'
+    text: 'PCN came for inspection last week. I open my Oga Plug dashboard, show them controlled substance log, batch numbers, everything correct. 15 minutes, inspection done. My colleague wey no get system, them spend 3 hours with her and still give query.',
+    avatar: 'CN',
+    painPoint: 'Regulatory compliance'
   }
 ];
 
@@ -85,9 +90,9 @@ function Testimonials() {
     <section id="testimonials" className="testimonials" ref={sectionRef}>
       <div className="testimonials-container">
         <div className="section-header">
-          <span className="section-badge">Testimonials</span>
-          <h2>Loved by African Businesses</h2>
-          <p>Join thousands of businesses already using Oga Plug to grow.</p>
+          <span className="section-badge">Real Stories</span>
+          <h2>Built for Nigerian Business Reality</h2>
+          <p>Real businesses. Real pain solved. Real money recovered or saved.</p>
         </div>
         
         <div className="testimonials-carousel">
@@ -101,11 +106,12 @@ function Testimonials() {
             </div>
             
             <div className="testimonial-content">
+              <div className="pain-point-badge">{testimonials[currentIndex].painPoint}</div>
               <p className="testimonial-text">{testimonials[currentIndex].text}</p>
               
               <div className="testimonial-rating">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                  <Star key={i} size={18} className="star" />
+                  <Star key={i} size={18} className="star" fill="currentColor" />
                 ))}
               </div>
               

@@ -1,8 +1,7 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
-import OnboardingDemo from './components/OnboardingDemo';
-import WhatsAppPreview from './components/WhatsAppPreview';
+import HowItWorks from './components/HowItWorks';
 import BusinessTypes from './components/BusinessTypes';
 import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
@@ -18,8 +17,7 @@ function App() {
       <main>
         <Hero />
         <Features />
-        <OnboardingDemo />
-        <WhatsAppPreview />
+        <HowItWorks />
         <BusinessTypes />
         <Pricing />
         <Testimonials />

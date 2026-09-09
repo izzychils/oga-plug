@@ -20,40 +20,40 @@ function Hero() {
       
       <div className="hero-content">
         <div className="hero-text">
-          <span className="badge">Business Operating System - Africa</span>
+          <span className="badge">Business Operating System for Africa</span>
           <h1>
-            <span className="highlight">Oga Plug</span>
+            <span className="highlight">41 Million Nigerian Businesses</span>
             <br />
-            Smartest Business Assistant
+            <span className="secondary-text">Have No Financial Records</span>
           </h1>
           <p className="hero-description">
-            Run your entire business from WhatsApp. Record sales, manage inventory, 
-            track debts, and get daily reports all through simple chat commands.
+            Not because they're bad at business. Because no tool was built for how they actually operate.
+            Oga Plug changes that. WhatsApp for input. Web dashboard for management. Built for how you work today.
           </p>
           
           <div className="hero-buttons">
             <a href="#cta" className="btn-primary">
               <MessageCircle size={20} />
-              Start on WhatsApp
+              Start Free Trial
               <ArrowRight size={18} />
             </a>
-            <a href="#features" className="btn-secondary">
-              See How it Works
+            <a href="#how-it-works" className="btn-secondary">
+              See How It Works
             </a>
           </div>
           
           <div className="hero-stats">
             <div className="stat">
               <Store size={18} />
-              <span><AnimatedCounter end={10000} suffix="+" /> Businesses</span>
+              <span>Port Harcourt & Owerri</span>
             </div>
             <div className="stat">
               <BarChart3 size={18} />
-              <span><AnimatedCounter end={2} prefix="₦" suffix="B+" /> Sales Tracked</span>
+              <span>Voice, Photo, Text</span>
             </div>
             <div className="stat">
               <Package size={18} />
-              <span><AnimatedCounter end={500} suffix="K+" /> Products</span>
+              <span>Zero Behavior Change</span>
             </div>
           </div>
         </div>
@@ -74,29 +74,30 @@ function Hero() {
                   <span>Hi</span>
                 </div>
                 <div className="message bot">
-                  <span>Welcome back! Here's your summary:</span>
+                  <span>Welcome back, Mama Ngozi! 👋</span>
                 </div>
                 <div className="message bot summary">
                   <div className="summary-item">
-                    <span className="label">Sales today:</span>
-                    <span className="value">₦45,200</span>
+                    <span className="label">Yesterday's sales:</span>
+                    <span className="value">₦184,500</span>
                   </div>
                   <div className="summary-item">
                     <span className="label">Low stock:</span>
-                    <span className="value">3 items</span>
+                    <span className="value warning">8 products</span>
                   </div>
                   <div className="summary-item">
-                    <span className="label">Pending debts:</span>
-                    <span className="value">₦12,500</span>
+                    <span className="label">Overdue debts:</span>
+                    <span className="value warning">₦309,000</span>
                   </div>
                 </div>
                 <div className="message bot">
                   <span>What would you like to do?</span>
                 </div>
                 <div className="message options">
-                  <span className="option">1. Record Sale</span>
-                  <span className="option">2. Check Stock</span>
-                  <span className="option">3. View Reports</span>
+                  <span className="option">1️⃣ Record Sale</span>
+                  <span className="option">2️⃣ Scan Receipt</span>
+                  <span className="option">3️⃣ Check Stock</span>
+                  <span className="option">4️⃣ Customer Debts</span>
                 </div>
               </div>
             </div>

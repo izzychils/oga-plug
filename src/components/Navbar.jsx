@@ -23,7 +23,7 @@ function Navbar() {
         
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
           <li><a href="#features" onClick={() => setIsMenuOpen(false)}>Features</a></li>
-          <li><a href="#onboarding" onClick={() => setIsMenuOpen(false)}>How it Works</a></li>
+          <li><a href="#how-it-works" onClick={() => setIsMenuOpen(false)}>How it Works</a></li>
           <li><a href="#whatsapp" onClick={() => setIsMenuOpen(false)}>WhatsApp</a></li>
           <li><a href="#pricing" onClick={() => setIsMenuOpen(false)}>Pricing</a></li>
           <li><a href="#testimonials" onClick={() => setIsMenuOpen(false)}>Testimonials</a></li>
