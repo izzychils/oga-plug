@@ -1,0 +1,7 @@
+# Single-page app fallback.
+#
+# The site is a client-side router: /about, /privacy-policy, /terms-of-use and
+# /terms-and-conditions have no file on disk, so a hard load or a refresh on one
+# of them has to be served index.html and handed to the router. Without this the
+# host answers 404 and every shared legal link breaks.
+/*    /index.html   200

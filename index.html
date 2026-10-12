@@ -1,19 +1,63 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Oga Plug - Africa's smartest business assistant. Run your entire business through WhatsApp. Record sales, manage inventory, track debts, and get daily reports." />
-    <meta name="keywords" content="business assistant, WhatsApp, Africa, sales tracking, inventory management, POS system" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!--
+      Icons derived from `src/assets/logo.jpg`. The source is a black mark on an
+      opaque white square, which is not usable as a favicon as-is, so the mark is
+      knocked out of its white ground and set on a brand ink tile. See
+      `scripts/` notes in the README for how each size was produced.
+    -->
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0b141a" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>Oga Plug: Business Operating System for Africa</title>
+    <meta
+      name="description"
+      content="Oga Plug is a WhatsApp-native inventory and business intelligence platform for Nigerian businesses. Record sales by voice or receipt photo, track stock, chase debts and see your real profit, without a new app to learn."
+    />
+    <meta
+      name="keywords"
+      content="business assistant, WhatsApp, Nigeria, sales tracking, inventory management, POS, debt ledger, pharmacy expiry tracking, bookkeeping"
+    />
     <meta name="author" content="MecurixTech Limited" />
-    <meta property="og:title" content="Oga Plug - Business Operating System" />
-    <meta property="og:description" content="Africa's smartest business assistant. Run your entire business through WhatsApp." />
+    <link rel="canonical" href="https://ogaplug.com/" />
+
     <meta property="og:type" content="website" />
-    <title>Oga Plug - Business Operating System | Africa</title>
+    <meta property="og:site_name" content="Oga Plug" />
+    <meta property="og:url" content="https://ogaplug.com/" />
+    <meta property="og:title" content="Oga Plug: Business Operating System for Africa" />
+    <meta
+      property="og:description"
+      content="Run your whole business from WhatsApp. Sales, stock, debts and profit in one chat, built for how Nigerian businesses actually operate."
+    />
+    <meta property="og:image" content="https://ogaplug.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Oga Plug: run your whole business from WhatsApp" />
+    <meta property="og:locale" content="en_NG" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Oga Plug: Business Operating System for Africa" />
+    <meta
+      name="twitter:description"
+      content="Run your whole business from WhatsApp. Sales, stock, debts and profit in one chat."
+    />
+    <meta name="twitter:image" content="https://ogaplug.com/og-image.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

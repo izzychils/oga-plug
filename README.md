@@ -78,10 +78,14 @@ The MVP focuses on **three core functions** built excellently:
 ## Tech Stack
 
 ### Frontend
-- **Framework:** React + Vite
-- **Styling:** CSS with CSS Variables (dark/light theme support)
+- **Framework:** React 19 + Vite + TypeScript
+- **Routing:** React Router (`src/lib/routes.ts` holds the route table; content pages are code-split)
+- **Styling:** Tailwind CSS v4 (design tokens in `src/styles/globals.css`, read through `@config`)
+- **Components:** shadcn/ui structure: Radix primitives in `src/components/ui`, merged with `cn()`
+- **Design system:** glass morphism (`src/lib/glass-morphism.ts`) on an ink ambient background
+- **Motion:** Framer Motion (`src/components/motion/reveal.tsx`)
 - **Icons:** Lucide React
-- **Deployment:** Netlify / Vercel
+- **Deployment:** Netlify / Vercel: both need the SPA fallback, which is committed (`public/_redirects` for Netlify, `vercel.json` for Vercel). Without it every deep link to a legal page 404s.
 
 ### Backend (Planned)
 - **API:** Python FastAPI
@@ -100,25 +104,89 @@ The MVP focuses on **three core functions** built excellently:
 oga-plug/
 ├── src/
 │   ├── components/
-│   │   ├── Hero.jsx              # Problem statement & hero
-│   │   ├── Features.jsx          # 3 MVP core functions
-│   │   ├── HowItWorks.jsx        # Interactive user flows
-│   │   ├── BusinessTypes.jsx     # Target users (General Trade & Pharmacy)
-│   │   ├── Pricing.jsx           # Subscription plans
-│   │   ├── Testimonials.jsx      # Nigerian business stories
-│   │   ├── CTA.jsx               # Call to action
-│   │   ├── Footer.jsx
-│   │   ├── Navbar.jsx
-│   │   ├── ThemeToggle.jsx
-│   │   └── WhatsAppButton.jsx
-│   ├── assets/
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── public/
-├── package.json
+│   │   ├── ui/                   # shadcn/ui primitives + the design system
+│   │   │   ├── chat.tsx          # headless chat (scrolling, submit event, composer)
+│   │   │   ├── navigation-menu.tsx
+│   │   │   ├── glass-card.tsx    # GlassCard / SectionHeading / SectionContainer
+│   │   │   ├── menu.tsx          # UserProfileSidebar
+│   │   │   └── …                 # button, input, avatar, dropdown, popover, …
+│   │   ├── brand/logo.tsx        # Logo, BrandMark, BrandAvatar (from assets/logo.jpg)
+│   │   ├── layout/               # shared chrome and page furniture
+│   │   │   ├── site-header.tsx   # glass menubar + mobile panel
+│   │   │   ├── nav-mega.tsx      # hover mega-menu (opaque overlay surface)
+│   │   │   ├── site-footer.tsx   # product / company / legal columns + sitemap
+│   │   │   ├── page-shell.tsx    # PageHero, PageBody, Prose, Callout, …
+│   │   │   ├── legal-page.tsx    # the shared legal-document layout + contents rail
+│   │   │   ├── scroll-manager.tsx# scroll and hash handling per route
+│   │   │   └── section-link.tsx  # route-aware link for shared chrome
+│   │   ├── sections/             # hero, features, how-it-works, industries,
+│   │   │                         # pricing, testimonials, cta
+│   │   ├── chat/                 # whatsapp-demo: the live, interactive demo
+│   │   ├── motion/               # scroll-reveal + stagger primitives
+│   │   ├── animated-counter.tsx
+│   │   └── whatsapp-fab.tsx      # floating chat button
+│   ├── pages/                    # one component per route (see Routes below)
+│   ├── lib/
+│   │   ├── utils.ts              # cn(), formatting, initials avatars
+│   │   ├── routes.ts             # the route table and every nav/footer link group
+│   │   ├── site.ts               # company, contact and WhatsApp details
+│   │   └── glass-morphism.ts     # the frosted-surface class map
+│   ├── styles/globals.css        # design tokens, ambient background, overlay surfaces
+│   ├── assets/logo.jpg           # the source logo every brand asset is derived from
+│   ├── App.tsx
+│   └── main.tsx
+├── public/                       # favicon, touch icon, OG card, manifest
+├── tailwind.config.ts
+├── tsconfig.app.json
+├── postcss.config.js
 └── README.md
 ```
+
+---
+
+## Routes
+
+| Path | Page | Source |
+|------|------|--------|
+| `/` | Marketing home | n/a |
+| `/about` | About Us | the About Us copy |
+| `/contact` | Contact Us | the Contact Us copy |
+| `/privacy-policy` | Privacy Policy (NDPA 2023) | the Privacy Policy copy |
+| `/terms-of-use` | Terms of Use | the Terms of Use copy |
+| `/terms-and-conditions` | Terms and Conditions, including the plan table | the Terms and Conditions copy |
+| `*` | 404 | n/a |
+
+Every one of them is linked from the footer's Company and Legal columns and its
+sitemap row. The anchors the marketing page is built from are addressed from
+other routes as `/#features` and friends, so `src/lib/routes.ts` is the only
+place those strings appear.
+
+### Brand assets
+
+Everything derives from `src/assets/logo.jpg`: a black mark on an opaque white
+square, which cannot be used as a favicon as it stands. The mark is knocked out
+of its white ground (per-pixel alpha from luminance; the source is pure
+greyscale, so nothing is lost), cropped tight, and set on a brand ink tile:
+
+| File | Size | Use |
+|------|------|-----|
+| `public/favicon-48.png` | 48² | browser tab |
+| `public/apple-touch-icon.png` | 180² | iOS home screen |
+| `public/icon-512.png` | 512² | PWA / manifest |
+| `public/brand-mark.png` | 512² | transparent mark for avatars |
+| `public/og-image.png` | 1200×630 | link previews |
+
+The original JPEG is used unmodified for the header and footer lockup, on a
+white tile so it looks as drawn.
+
+### Scripts
+
+| Command | What it does |
+|---------|--------------|
+| `npm run dev` | Vite dev server on `http://127.0.0.1:5173` |
+| `npm run build` | Type-checks (`tsc -b`) then builds to `dist/` |
+| `npm run typecheck` | Types only |
+| `npm run lint` | ESLint |
 
 ---
 
