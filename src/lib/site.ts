@@ -7,7 +7,7 @@
  * from this module.
  *
  * The addresses below are role addresses on the product domain, matching the
- * `hello@ogaplug.com` the footer already published. Swap them here if the real
+ * `user@ogaplug.com` the footer already published. Swap them here if the real
  * mailboxes differ: nothing else needs to change.
  */
 
@@ -16,9 +16,9 @@ export const SITE = {
   tagline: "Business OS for Africa",
   shortDescription:
     "Africa's smartest business assistant. Record sales, manage stock and chase debts entirely from WhatsApp.",
-  company: "MecurixTech Limited",
+  company: "Oga Plug",
   /** Registered address line used in the footer and on the legal pages. */
-  registered: "MecurixTech Limited, Rivers State, Nigeria",
+  registered: "Rivers State, Nigeria",
   origin: "https://ogaplug.com",
   domain: "ogaplug.com",
   /** The markets the MVP actually launches in. */
@@ -30,12 +30,12 @@ export const SITE = {
 /* ------------------------------------------------------------------ people */
 
 export const CONTACT = {
-  general: "hello@ogaplug.com",
-  support: "support@ogaplug.com",
-  billing: "billing@ogaplug.com",
-  privacy: "privacy@ogaplug.com",
-  partnerships: "partnerships@ogaplug.com",
-  legal: "legal@ogaplug.com",
+  general: "user@ogaplug.com",
+  support: "user@ogaplug.com",
+  billing: "user@ogaplug.com",
+  privacy: "user@ogaplug.com",
+  partnerships: "user@ogaplug.com",
+  legal: "user@ogaplug.com",
 } as const;
 
 /* ------------------------------------------------------------------- phone */

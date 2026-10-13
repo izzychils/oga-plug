@@ -59,7 +59,7 @@ const SECTIONS: LegalDocSection[] = [
   {
     title: "Our property",
     paras: [
-      "Oga Plug, its software, design, name and logo belong to MecurixTech. These terms give you a right to use the service, not to own any part of it.",
+      "Oga Plug, its software, design, name and logo belong to Oga Plug. These terms give you a right to use the service, not to own any part of it.",
     ],
   },
   {

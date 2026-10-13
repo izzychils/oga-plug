@@ -107,7 +107,7 @@ const SECTIONS: LegalDocSection[] = [
   {
     title: "Marketplace and supplier dealings",
     paras: [
-      "Transactions between businesses, including negotiated invoices, are contracts between those businesses. MecurixTech is not a party to them and is not responsible for the quality, delivery, price or payment of goods unless we expressly say otherwise for a specific paid service.",
+      "Transactions between businesses, including negotiated invoices, are contracts between those businesses. Oga Plug is not a party to them and is not responsible for the quality, delivery, price or payment of goods unless we expressly say otherwise for a specific paid service.",
     ],
   },
   {
@@ -119,7 +119,7 @@ const SECTIONS: LegalDocSection[] = [
   {
     title: "Limitation of liability",
     paras: [
-      "To the extent the law allows, MecurixTech is not liable for indirect or consequential loss, lost profits, lost sales, stock loss or lost data arising from your use of Oga Plug. Our total liability for any claim is limited to the fees you paid us in the three months before the claim arose.",
+      "To the extent the law allows, Oga Plug is not liable for indirect or consequential loss, lost profits, lost sales, stock loss or lost data arising from your use of Oga Plug. Our total liability for any claim is limited to the fees you paid us in the three months before the claim arose.",
     ],
   },
   {

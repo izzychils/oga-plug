@@ -199,7 +199,7 @@ white tile so it looks as drawn.
 
 ```bash
 # Clone the repository
-git clone https://github.com/mecurixtech/oga-plug.git
+git clone https://github.com/izzychils/oga-plug.git
 cd oga-plug
 
 # Install dependencies
@@ -325,15 +325,15 @@ This is a pre-launch product. Contributions are welcome from developers, designe
 
 ## License
 
-Proprietary - MecurixTech Limited © 2026
+Proprietary - Oga Plug © 2026
 
 ---
 
 ## Contact
 
-**MecurixTech Limited**
+**Oga Plug**
 - Website: [https://oga-plug.com](https://oga-plug.com)
-- Email: hello@mecurixtech.com
+- Email: user@ogaplug.com
 - WhatsApp: +234 XXX XXX XXXX (coming soon)
 
 ---

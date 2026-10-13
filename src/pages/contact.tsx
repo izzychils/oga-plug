@@ -277,9 +277,9 @@ export function ContactPage() {
                 <p className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
                   Company
                 </p>
-                <p className="mt-2 text-sm text-foreground/85">{SITE.registered}</p>
+                <p className="mt-2 text-sm text-foreground/85">{SITE.company}</p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Trading as {SITE.name} · {SITE.domain}
+                  {SITE.registered} · {SITE.domain}
                 </p>
               </div>
               <div>
