@@ -1,0 +1,3 @@
+# robots.txt - www.ogaplug.com
+User-agent: *
+Allow: /
