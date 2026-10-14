@@ -122,6 +122,13 @@ export function SiteHeader() {
 
           <div className="ml-auto flex shrink-0 items-center gap-2 xl:ml-0 xl:justify-end">
             <SectionLink
+              to={ROUTES.signIn}
+              className="hidden items-center rounded-full px-3.5 py-2 text-sm font-semibold text-foreground/75 transition-colors hover:bg-white/10 hover:text-foreground sm:inline-flex"
+            >
+              Sign in
+            </SectionLink>
+
+            <SectionLink
               to={SECTION_LINKS.cta}
               className="hidden items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition-transform duration-300 hover:scale-[1.03] sm:inline-flex"
             >
@@ -197,6 +204,28 @@ export function SiteHeader() {
                 Contact us
                 <ArrowRight className="size-3.5 opacity-40" aria-hidden />
               </SectionLink>
+
+              {/*
+                The account screens. One row, two columns: two stacked rows
+                pushed the WhatsApp actions off the bottom of a 640px phone
+                viewport, and the panel cannot scroll.
+              */}
+              <div className="mt-1 grid grid-cols-2 gap-1">
+                <SectionLink
+                  to={ROUTES.signIn}
+                  onClick={closeMenu}
+                  className="flex min-h-11 items-center justify-center rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-sm font-semibold transition-colors hover:bg-white/10"
+                >
+                  Sign in
+                </SectionLink>
+                <SectionLink
+                  to={ROUTES.signUp}
+                  onClick={closeMenu}
+                  className="flex min-h-11 items-center justify-center rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-sm font-semibold transition-colors hover:bg-white/10"
+                >
+                  Create account
+                </SectionLink>
+              </div>
 
               <div className="my-1 h-px bg-white/10" />
 

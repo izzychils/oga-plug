@@ -10,6 +10,8 @@ export const ROUTES = {
   home: "/",
   about: "/about",
   contact: "/contact",
+  signIn: "/login",
+  signUp: "/signup",
   privacy: "/privacy-policy",
   termsOfUse: "/terms-of-use",
   termsAndConditions: "/terms-and-conditions",
@@ -52,6 +54,17 @@ export const COMPANY_LINKS: PageLink[] = [
 ];
 
 /**
+ * The account entry points.
+ *
+ * They are actions rather than content, so they stay out of the marketing
+ * columns and are rendered in the header and in the footer's sitemap row.
+ */
+export const ACCOUNT_LINKS: PageLink[] = [
+  { to: ROUTES.signIn, label: "Sign in" },
+  { to: ROUTES.signUp, label: "Create account" },
+];
+
+/**
  * The legal column. Each entry is a real page because these documents are the
  * ones a customer, a bank or a regulator needs to be able to link to directly.
  */
@@ -64,6 +77,7 @@ export const LEGAL_LINKS: PageLink[] = [
 /** Everything the footer's sitemap row shows, in order. */
 export const FOOTER_SITEMAP: PageLink[] = [
   ...COMPANY_LINKS,
+  ...ACCOUNT_LINKS,
   ...LEGAL_LINKS,
   { to: "/contact#data-request", label: "Data requests" },
 ];

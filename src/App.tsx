@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -20,6 +20,8 @@ import { ROUTES } from "@/lib/routes";
  */
 const AboutPage = lazy(() => import("@/pages/about"));
 const ContactPage = lazy(() => import("@/pages/contact"));
+const LoginPage = lazy(() => import("@/pages/login"));
+const SignUpPage = lazy(() => import("@/pages/signup"));
 const PrivacyPolicyPage = lazy(() => import("@/pages/privacy-policy"));
 const TermsOfUsePage = lazy(() => import("@/pages/terms-of-use"));
 const TermsAndConditionsPage = lazy(() => import("@/pages/terms-and-conditions"));
@@ -39,7 +41,7 @@ function RouteFallback() {
 }
 
 /**
- * The application shell.
+ * The routed shell, inside the router so it can read the current path.
  *
  * Three fixed background layers sit behind everything, all declared in
  * globals.css, so every frosted panel above them has something real to blur:
@@ -48,43 +50,68 @@ function RouteFallback() {
  * gradient at the base of the stack.
  *
  * The header, the footer and the floating chat button live outside `Routes` so
- * they persist across navigation, and `ScrollManager` is mounted inside the
- * router because it is the only component that needs the current location.
+ * they persist across navigation — except on the two account screens, which own
+ * their full viewport: the header and footer are together taller than a phone
+ * screen, and those pages must show the whole form without scrolling.
+ */
+function AppShell() {
+  const { pathname } = useLocation();
+  const isAuthRoute = pathname === ROUTES.signIn || pathname === ROUTES.signUp;
+
+  return (
+    <div className="app-surface app-ambient relative flex min-h-dvh flex-col">
+      <div className="ambient-streaks" aria-hidden />
+
+      {isAuthRoute ? null : (
+        <>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-bold focus:text-primary-foreground"
+          >
+            Skip to content
+          </a>
+
+          <SiteHeader />
+        </>
+      )}
+
+      <main id="main" className="flex-1">
+        <Suspense fallback={<RouteFallback />}>
+          <Routes>
+            <Route path={ROUTES.home} element={<HomePage />} />
+            <Route path={ROUTES.about} element={<AboutPage />} />
+            <Route path={ROUTES.contact} element={<ContactPage />} />
+            <Route path={ROUTES.signIn} element={<LoginPage />} />
+            <Route path={ROUTES.signUp} element={<SignUpPage />} />
+            <Route path={ROUTES.privacy} element={<PrivacyPolicyPage />} />
+            <Route path={ROUTES.termsOfUse} element={<TermsOfUsePage />} />
+            <Route path={ROUTES.termsAndConditions} element={<TermsAndConditionsPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
+      </main>
+
+      {isAuthRoute ? null : (
+        <>
+          <SiteFooter />
+          <WhatsAppFab />
+        </>
+      )}
+    </div>
+  );
+}
+
+/**
+ * The application shell.
+ *
+ * `ScrollManager` is mounted inside the router because it is the only component
+ * that needs the current location.
  */
 export function App() {
   return (
     <BrowserRouter>
       <ScrollManager />
-
-      <div className="app-surface app-ambient relative flex min-h-dvh flex-col">
-        <div className="ambient-streaks" aria-hidden />
-
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-bold focus:text-primary-foreground"
-        >
-          Skip to content
-        </a>
-
-        <SiteHeader />
-
-        <main id="main" className="flex-1">
-          <Suspense fallback={<RouteFallback />}>
-            <Routes>
-              <Route path={ROUTES.home} element={<HomePage />} />
-              <Route path={ROUTES.about} element={<AboutPage />} />
-              <Route path={ROUTES.contact} element={<ContactPage />} />
-              <Route path={ROUTES.privacy} element={<PrivacyPolicyPage />} />
-              <Route path={ROUTES.termsOfUse} element={<TermsOfUsePage />} />
-              <Route path={ROUTES.termsAndConditions} element={<TermsAndConditionsPage />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </Suspense>
-        </main>
-
-        <SiteFooter />
-        <WhatsAppFab />
-      </div>
+      <AppShell />
     </BrowserRouter>
   );
 }

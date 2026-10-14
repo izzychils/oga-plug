@@ -637,3 +637,55 @@
     opacity: 1;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   The account screens on a short viewport
+   Sign-in and sign-up have to fit one screen — no scrolling to reach the
+   button, the notice, or the link across to the other page. At 640px tall (a
+   common Android phone in portrait, and the floor this is designed to) the
+   signup form runs about 60px over, and this is where that comes from: the page
+   padding, the panel padding, the field gaps and the control heights, in that
+   order, because that is the order in which they cost the least to take away.
+
+   Unlayered on purpose, which puts these rules ahead of the Tailwind utilities
+   on the same elements so no `!important` is needed — the same trick
+   `.overlay-sheet` uses above.
+   --------------------------------------------------------------------------- */
+@media (max-height: 700px) {
+  .auth-page {
+    padding-block: 0.6rem;
+  }
+
+  .auth-page .auth-panel {
+    padding: 1rem 1.1rem;
+  }
+
+  .auth-page .auth-brand {
+    margin-bottom: 0.5rem;
+  }
+
+  .auth-page .auth-sub {
+    display: none;
+  }
+
+  .auth-page form {
+    row-gap: 0.6rem;
+  }
+
+  .auth-page input:not([type="checkbox"]) {
+    height: 2.5rem;
+  }
+
+  .auth-page button[type="submit"] {
+    min-height: 2.5rem;
+  }
+
+  .auth-page [role="status"] {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .auth-page .auth-alt {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+  }
+}

@@ -290,6 +290,8 @@ export function SiteFooter() {
             {[
               { to: ROUTES.about, label: "About us" },
               { to: ROUTES.contact, label: "Contact us" },
+              { to: ROUTES.signIn, label: "Sign in" },
+              { to: ROUTES.signUp, label: "Create account" },
               { to: ROUTES.privacy, label: "Privacy policy" },
               { to: ROUTES.termsOfUse, label: "Terms of use" },
               { to: ROUTES.termsAndConditions, label: "Terms & conditions" },
