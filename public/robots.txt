@@ -1,3 +1,22 @@
 # robots.txt - www.ogaplug.com
+#
+# Crawl rules for search engines. Allow/Disallow control crawling, not
+# indexing: a Disallow only stops a URL being fetched, and pages that must
+# never appear in results also need a noindex tag.
+
 User-agent: *
+
+# ------------------------------------------------- public pages to index
 Allow: /
+Allow: /about
+Allow: /contact
+Allow: /privacy-policy
+Allow: /terms-of-use
+Allow: /terms-and-conditions
+
+# ------------------------------------------- account screens (forms, not content)
+Disallow: /login
+Disallow: /signup
+
+# ---------------------------------------------------------------- sitemap
+Sitemap: https://www.ogaplug.com/sitemap.xml
