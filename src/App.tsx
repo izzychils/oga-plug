@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { ScrollManager } from "@/components/layout/scroll-manager";
 import { WhatsAppFab } from "@/components/whatsapp-fab";
+import { WhatsAppGateProvider } from "@/components/whatsapp-gate";
 import { HomePage } from "@/pages/home";
 import { ROUTES } from "@/lib/routes";
 
@@ -110,8 +111,10 @@ function AppShell() {
 export function App() {
   return (
     <BrowserRouter>
-      <ScrollManager />
-      <AppShell />
+      <WhatsAppGateProvider>
+        <ScrollManager />
+        <AppShell />
+      </WhatsAppGateProvider>
     </BrowserRouter>
   );
 }
