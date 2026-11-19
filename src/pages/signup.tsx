@@ -20,7 +20,7 @@ type SignUpErrors = {
  *
  * Three fields and a checkbox, on purpose: every extra row is height on a phone
  * screen, and this page has to fit one viewport without scrolling. Everything
- * else the business needs — the shop name, the product list — is captured inside
+ * else the business needs - the shop name, the product list - is captured inside
  * the WhatsApp onboarding once there is a number to attach it to.
  */
 export function SignUpPage() {
@@ -64,7 +64,7 @@ export function SignUpPage() {
      * points at the WhatsApp onboarding that already exists, which is how the
      * first customers are actually being set up.
      */
-    setNote("Accounts are not live yet — start on WhatsApp and we will set your business up.");
+    setNote("Accounts are not live yet - start on WhatsApp and we will set your business up.");
   };
 
   return (

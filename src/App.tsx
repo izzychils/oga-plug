@@ -51,7 +51,7 @@ function RouteFallback() {
  * gradient at the base of the stack.
  *
  * The header, the footer and the floating chat button live outside `Routes` so
- * they persist across navigation — except on the two account screens, which own
+ * they persist across navigation - except on the two account screens, which own
  * their full viewport: the header and footer are together taller than a phone
  * screen, and those pages must show the whole form without scrolling.
  */

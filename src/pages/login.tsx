@@ -16,8 +16,8 @@ type LoginErrors = {
 /**
  * Signing in.
  *
- * Sized to one screen: on a phone the whole form — both fields, the button and
- * the link to the other screen — is visible without scrolling, which is why the
+ * Sized to one screen: on a phone the whole form - both fields, the button and
+ * the link to the other screen - is visible without scrolling, which is why the
  * page renders outside the site header and footer (see `App.tsx`).
  */
 export function LoginPage() {
@@ -54,7 +54,7 @@ export function LoginPage() {
      * plainly rather than pretending the details were accepted. Swap this line
      * for the real sign-in call when the backend exists.
      */
-    setNote("Accounts are not live yet — start on WhatsApp and we will set your business up.");
+    setNote("Accounts are not live yet - start on WhatsApp and we will set your business up.");
   };
 
   return (

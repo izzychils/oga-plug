@@ -12,8 +12,8 @@ import { cn } from "@/lib/utils";
  *
  * These are the only two pages that render without the site header and footer
  * (see `App.tsx`). That is not a styling preference: the brief is that someone
- * signing in must see the whole form — every field, the button, the way to the
- * other screen — without scrolling, and the sticky header plus the footer are
+ * signing in must see the whole form - every field, the button, the way to the
+ * other screen - without scrolling, and the sticky header plus the footer are
  * together taller than a phone viewport. So the page owns the full viewport and
  * carries its own compact brand row instead.
  *
